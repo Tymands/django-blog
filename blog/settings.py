@@ -153,4 +153,6 @@ if os.environ.get('ENV') == 'PRODUCTION':
     EMAIL_USE_TLS = True
     DEFAULT_FROM_EMAIL = "Django blog <noreply@djangoblog.com>"
 else:
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = '/tmp/app-messages' # change this to a proper location
+
