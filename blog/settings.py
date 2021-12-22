@@ -131,6 +131,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+urlpatterns += patterns(”, (r’^static/(?P.*)$’, ‘django.views.static.serve’, {‘document_root’: settings.STATIC_ROOT}),)
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (BASE_DIR / 'static',)
 
